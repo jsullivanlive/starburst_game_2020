@@ -1,3 +1,7 @@
+# patrick's phaserjs game
+
+started from this example: http://labs.phaser.io/index.html?dir=games/firstgame/&q=
+
 
 TODO:
 
