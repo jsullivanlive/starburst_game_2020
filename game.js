@@ -14,6 +14,9 @@ var config = {
     create: create,
     update: update,
   },
+  audio: {
+    disableWebAudio: true,
+  },
 };
 
 var player;
@@ -36,6 +39,8 @@ function preload() {
 
   this.load.image("spark0", require("./assets/blue.png"));
   this.load.image("spark1", require("./assets/red.png"));
+
+  this.load.audio("boom", require("./assets/player_death.wav"));
 }
 
 function create() {
@@ -131,6 +136,8 @@ function update() {
 function collectStar(player, star) {
   // alert("booom");
   console.log(player);
+
+  this.sound.add("boom").play();
 
   var emitter0 = this.add.particles("spark0").createEmitter({
     x: player.x,
